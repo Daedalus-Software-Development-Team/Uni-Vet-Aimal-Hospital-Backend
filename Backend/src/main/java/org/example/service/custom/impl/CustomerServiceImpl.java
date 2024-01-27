@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService{
     CustomerRepository customerRepository;
 
     @Override
-    public CustomerEntity save(CustomerDto dto) throws SQLException, ClassNotFoundException {
+    public CustomerEntity save(CustomerDto dto) {
         CustomerEntity entity=
                 mapper.convertValue(dto,CustomerEntity.class);
         return customerRepository.save(entity);
@@ -35,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService{
 
 
     @Override
-    public boolean delete(Long value) throws SQLException, ClassNotFoundException {
+    public boolean delete(Long value) {
         Optional<CustomerEntity> customerEntityOptional
                 =customerRepository.findById(value);
         if(customerEntityOptional.isPresent()){
@@ -46,7 +46,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public List<CustomerDto> getAll() throws SQLException, ClassNotFoundException {
+    public List<CustomerDto> getAll() {
         List<CustomerDto> list=new ArrayList<>();
 
         Iterable<CustomerEntity> customerList=customerRepository.findAll();

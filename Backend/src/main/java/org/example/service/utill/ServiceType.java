@@ -1,5 +1,0 @@
-package org.example.service.utill;
-
-public enum ServiceType {
-    APOINTMENT,CUSTOMER,DOCTOR,OTHEREXPENSE,PETDETAIL,PET,PRESCRIPTION,PRESCRIPTIONDETAIL,STAFF
-}

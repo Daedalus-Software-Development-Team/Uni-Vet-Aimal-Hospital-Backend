@@ -1,4 +1,7 @@
 package org.example.service.custom;
 
-public interface ApointmentSevice {
+import org.example.dto.ApointmentDto;
+import org.example.service.CrudService;
+
+public interface ApointmentSevice extends CrudService<ApointmentDto> {
 }

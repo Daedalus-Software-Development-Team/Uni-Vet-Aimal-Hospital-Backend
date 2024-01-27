@@ -16,5 +16,9 @@ public class CustomerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_sequence")
     Long customerId;
+    String firstName;
+    String lastName;
+    String contact;
+    String email;
 
 }

@@ -24,6 +24,7 @@ public class HibernateUtil {
                 .addAnnotatedClass(PetEntity.class)
                 .addAnnotatedClass(PrescriptionDetailEntity.class)
                 .addAnnotatedClass(StaffEntity.class)
+                .addAnnotatedClass(DoctorEntity.class)
 
                 .getMetadataBuilder()
                 .applyImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE)

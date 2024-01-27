@@ -15,6 +15,5 @@ import lombok.ToString;
 public class OtherExpenseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "otherExpense_sequence")
-    Long id;
-    private String otherExpenseId;
+    Long otherExpenseId;
 }

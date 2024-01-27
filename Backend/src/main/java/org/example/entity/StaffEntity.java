@@ -15,6 +15,5 @@ import lombok.ToString;
 public class StaffEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "staff_sequence")
-    Long id;
-    private String staffId;
+    Long staffId;
 }

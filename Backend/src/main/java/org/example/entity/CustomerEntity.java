@@ -11,10 +11,10 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-@SequenceGenerator(name = "customer_sequence", sequenceName = "customer_sequence", allocationSize = 1 )
+
 public class CustomerEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long customerId;
     String firstName;
     String lastName;

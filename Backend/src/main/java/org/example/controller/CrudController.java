@@ -1,6 +1,7 @@
 package org.example.controller;
 
 
+import org.example.common.AuditTime;
 import org.example.dto.Response;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +9,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface CrudController<T,U> {
-
 
     T saveOrUpdate(U dto) ;
 

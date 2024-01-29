@@ -1,7 +1,7 @@
 package org.example.service.custom.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.db.DBConnection;
+
 import org.example.dto.CustomerDto;
 import org.example.entity.CustomerEntity;
 import org.example.repository.CustomerRepository;
@@ -9,8 +9,6 @@ import org.example.service.custom.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -24,6 +22,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Autowired
     CustomerRepository customerRepository;
+
 
     @Override
     public CustomerEntity save(CustomerDto dto) {
@@ -63,12 +62,18 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public Long getNextId() throws SQLException {
-        String sql = "SELECT * FROM customer_sequence";
-        PreparedStatement pstm = DBConnection.getInstance().getConnection().prepareStatement(sql);
-        ResultSet resultSet = pstm.executeQuery();
-        if (resultSet.next()){
-            return resultSet.getLong(1);
+
+        List<CustomerDto> list=new ArrayList<>();
+
+        Iterable<CustomerEntity> customerList=customerRepository.findAll();
+        Iterator<CustomerEntity> iterator=customerList.iterator();
+        Long lastId=null;
+        while(iterator.hasNext()){
+            CustomerEntity entity=iterator.next();
+
+            lastId= entity.getCustomerId();
+
         }
-        return null;
+        return lastId+1;
     }
 }

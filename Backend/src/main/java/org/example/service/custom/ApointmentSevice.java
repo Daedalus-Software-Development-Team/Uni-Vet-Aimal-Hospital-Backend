@@ -6,5 +6,5 @@ import org.example.entity.ApointmentEntity;
 import org.example.entity.CustomerEntity;
 import org.example.service.CrudService;
 
-public interface ApointmentSevice  extends CrudService<ApointmentDto, ApointmentEntity>{
+public interface ApointmentSevice  extends CrudService<ApointmentEntity, ApointmentDto>{
 }

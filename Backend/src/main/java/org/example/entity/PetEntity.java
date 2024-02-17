@@ -11,9 +11,9 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-@SequenceGenerator(name = "pet_sequence", sequenceName = "pet_sequence", allocationSize = 1 )
+
 public class PetEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pet_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long petEntityId;
 }

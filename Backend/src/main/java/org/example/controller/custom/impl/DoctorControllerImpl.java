@@ -9,6 +9,7 @@ import org.example.service.custom.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class DoctorControllerImpl implements DoctorController {
     DoctorService service;
     @PostMapping("/doctor")
     @Override
-    public DoctorEntity saveOrUpdate(DoctorDto dto) {
+    public DoctorEntity saveOrUpdate(@RequestBody DoctorDto dto) {
         return service.save(dto);
     }
 

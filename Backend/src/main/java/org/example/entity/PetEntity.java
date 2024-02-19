@@ -15,5 +15,7 @@ import lombok.ToString;
 public class PetEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long petEntityId;
+    Long petId;
+    String petName;
+    String type;
 }

@@ -7,10 +7,7 @@ import org.example.entity.DoctorEntity;
 import org.example.service.custom.CustomerService;
 import org.example.service.custom.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @RestController
@@ -24,18 +21,28 @@ public class DoctorControllerImpl implements DoctorController {
         return service.save(dto);
     }
 
+    @GetMapping("/doctor")
     @Override
     public List<DoctorDto> getAll() throws InterruptedException {
-        return null;
+        return service.getAll();
     }
 
     @Override
-    public Response delete(Long value) {
-        return null;
+    @DeleteMapping("/doctor/{doctorId}")
+    public org.example.dto.Response delete(@PathVariable Long doctorId)  {
+        boolean isRemoved = service.delete(doctorId);
+        if(isRemoved) {
+            return new Response(String.format("Removed Doctor Id (%s)", doctorId));
+
+        } else {
+            return new Response(String.format("Doctor Id (%s) Invalid", doctorId));
+
+        }
     }
 
+    @GetMapping("/doctorNextId")
     @Override
     public Long getNextId() throws Exception {
-        return null;
+        return service.getNextId();
     }
 }

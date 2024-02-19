@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class DoctorDto {
     Long doctorId;
     String name;
+    Double salary;
 }

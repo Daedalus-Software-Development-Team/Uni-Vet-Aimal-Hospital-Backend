@@ -17,5 +17,5 @@ public class DoctorEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long doctorId;
     String name;
-
+    Double salary;
 }

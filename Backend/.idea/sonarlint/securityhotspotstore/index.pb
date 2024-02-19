@@ -88,3 +88,5 @@ Jsrc/main/java/org/example/controller/custom/impl/DoctorControllerImpl.java,0\1
 0src/main/java/org/example/dto/ApointmentDto.java,0\4\04580e6afbc3bfe33c832427c16f687019f15450
 j
 :src/main/java/org/example/repository/DoctorRepository.java,4\4\447f513def72e170095edf285af3c46d4bb5dd1e
+b
+2src/main/java/org/example/dto/OtherExpenseDto.java,0\7\0767f009e0294495ef5232ac637b4fc9bda7c3f0

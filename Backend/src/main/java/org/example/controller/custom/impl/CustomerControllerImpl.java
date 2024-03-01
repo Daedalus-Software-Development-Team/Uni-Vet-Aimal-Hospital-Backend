@@ -4,6 +4,7 @@ package org.example.controller.custom.impl;
 
 import org.example.controller.custom.CustomerController;
 import org.example.dto.CustomerDto;
+import org.example.dto.EmailDto;
 import org.example.dto.Response;
 import org.example.entity.CustomerEntity;
 import org.example.service.custom.CustomerService;
@@ -47,4 +48,5 @@ public class CustomerControllerImpl implements CustomerController{
     public Long getNextId() throws Exception {
         return service.getNextId();
     }
+
 }

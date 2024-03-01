@@ -3,6 +3,7 @@ package org.example.service.custom.impl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.example.dto.CustomerDto;
+import org.example.dto.EmailDto;
 import org.example.entity.CustomerEntity;
 import org.example.repository.CustomerRepository;
 import org.example.service.custom.CustomerService;
@@ -26,6 +27,10 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public CustomerEntity save(CustomerDto dto) {
+        if(!validateEmail(dto)){
+            return null;
+        }
+
         CustomerEntity entity=
                 mapper.convertValue(dto,CustomerEntity.class);
         return customerRepository.save(entity);
@@ -46,6 +51,10 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public List<CustomerDto> getAll() {
+        EmailDto e=new EmailDto("thiwankar2003@gmail.com","UNI_vet Org","Hello","ER_DIAGRAM_ICM105_ThiwankaReiss.pdf");
+        EmailDto j=new EmailDto("thiwankar2003@gmail.com","Test","Hello",null);
+        e.sendEmail();
+        j.sendEmail();
         List<CustomerDto> list=new ArrayList<>();
 
         Iterable<CustomerEntity> customerList=customerRepository.findAll();
@@ -75,5 +84,13 @@ public class CustomerServiceImpl implements CustomerService{
 
         }
         return lastId+1;
+    }
+
+    private boolean validateEmail(CustomerDto dto){
+        String subject="Welcome to Uni-Vet Pet Care";
+        String textContent="Dear "+dto.getFirstName()+" "+dto.getLastName()+" ,\n"+"We warmly welcome you to our veterinary service.";
+        EmailDto email=new EmailDto(dto.getEmail(), subject,textContent,null);
+
+       return email.sendEmail();
     }
 }

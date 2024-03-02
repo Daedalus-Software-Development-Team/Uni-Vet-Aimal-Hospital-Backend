@@ -18,4 +18,5 @@ public interface CrudController<T,U> {
     Response delete(Long value) ;
 
     public  Long getNextId() throws Exception;
+    U getById(Long id);
 }

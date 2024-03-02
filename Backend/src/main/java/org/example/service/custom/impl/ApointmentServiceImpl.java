@@ -29,4 +29,9 @@ public class ApointmentServiceImpl implements ApointmentSevice {
     public Long getNextId() throws SQLException {
         return null;
     }
+
+    @Override
+    public ApointmentDto getById(Long id) {
+        return null;
+    }
 }

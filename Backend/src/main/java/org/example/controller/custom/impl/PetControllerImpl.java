@@ -46,4 +46,9 @@ public class PetControllerImpl implements PetController {
     public Long getNextId() throws Exception {
         return service.getNextId();
     }
+
+    @Override
+    public PetDto getById(Long id) {
+        return null;
+    }
 }

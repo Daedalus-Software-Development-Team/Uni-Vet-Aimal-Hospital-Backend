@@ -10,4 +10,5 @@ public interface CrudService<U,T>  {
     boolean delete(Long value) ;
     List<T> getAll() ;
     Long getNextId() throws SQLException;
+    T getById(Long id);
 }

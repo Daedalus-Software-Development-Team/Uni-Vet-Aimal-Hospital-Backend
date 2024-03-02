@@ -72,4 +72,9 @@ public class PetServiceImpl implements PetService {
         }
         return lastId+1;
     }
+
+    @Override
+    public PetDto getById(Long id) {
+        return null;
+    }
 }

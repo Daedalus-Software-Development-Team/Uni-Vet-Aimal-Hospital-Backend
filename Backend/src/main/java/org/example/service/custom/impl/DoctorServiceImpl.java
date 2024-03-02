@@ -39,4 +39,9 @@ public class DoctorServiceImpl implements DoctorService {
     public Long getNextId() throws SQLException {
         return null;
     }
+
+    @Override
+    public DoctorDto getById(Long id) {
+        return null;
+    }
 }

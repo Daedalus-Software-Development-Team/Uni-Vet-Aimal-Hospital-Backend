@@ -18,4 +18,5 @@ public class DoctorEntity {
     Long doctorId;
     String name;
     Double salary;
+    String description;
 }

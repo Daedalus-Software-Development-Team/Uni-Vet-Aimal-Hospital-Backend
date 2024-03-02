@@ -51,10 +51,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public List<CustomerDto> getAll() {
-        EmailDto e=new EmailDto("thiwankar2003@gmail.com","UNI_vet Org","Hello","ER_DIAGRAM_ICM105_ThiwankaReiss.pdf");
-        EmailDto j=new EmailDto("thiwankar2003@gmail.com","Test","Hello",null);
-        e.sendEmail();
-        j.sendEmail();
+
         List<CustomerDto> list=new ArrayList<>();
 
         Iterable<CustomerEntity> customerList=customerRepository.findAll();
@@ -84,6 +81,11 @@ public class CustomerServiceImpl implements CustomerService{
 
         }
         return lastId+1;
+    }
+
+    @Override
+    public CustomerDto getById(Long id) {
+        return mapper.convertValue(customerRepository.findById(id),CustomerDto.class) ;
     }
 
     private boolean validateEmail(CustomerDto dto){

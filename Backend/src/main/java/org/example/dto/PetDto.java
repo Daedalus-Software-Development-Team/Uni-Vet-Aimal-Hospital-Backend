@@ -11,4 +11,5 @@ public class PetDto {
     Long petId;
     String petName;
     String type;
+    Long customerId;
 }

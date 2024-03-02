@@ -48,5 +48,10 @@ public class CustomerControllerImpl implements CustomerController{
     public Long getNextId() throws Exception {
         return service.getNextId();
     }
+    @GetMapping("/customer/{customerId}")
+    @Override
+    public CustomerDto getById(@PathVariable Long customerId) {
+        return service.getById(customerId);
+    }
 
 }

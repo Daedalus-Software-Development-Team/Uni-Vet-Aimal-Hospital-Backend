@@ -23,5 +23,5 @@ public class PrescriptionEntity {
     Long doctorId;
     String description;
     Double total;
-    List<PrescriptionDetailDto> prescriptionDetailList;
+//    List<PrescriptionDetailDto> prescriptionDetailList;
 }

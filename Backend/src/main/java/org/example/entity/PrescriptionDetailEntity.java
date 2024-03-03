@@ -11,7 +11,6 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-
 public class PrescriptionDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -14,7 +14,6 @@ import java.util.List;
 @Data
 @ToString
 @Entity
-
 public class PrescriptionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

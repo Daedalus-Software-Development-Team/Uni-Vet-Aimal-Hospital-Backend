@@ -78,6 +78,6 @@ public class PetServiceImpl implements PetService {
 
     @Override
     public PetDto getById(Long id) {
-        return null;
+        return mapper.convertValue(repository.findById(id), PetDto.class) ;
     }
 }

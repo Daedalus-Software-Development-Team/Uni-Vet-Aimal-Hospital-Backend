@@ -16,4 +16,11 @@ public class PrescriptionDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long prescriptionDetailId;
+    Long prescriptionId;
+    Long medicineId;
+    Boolean available;
+    Boolean beforeMeal;
+    Double quantity;
+    Integer days;
+    Double price;
 }

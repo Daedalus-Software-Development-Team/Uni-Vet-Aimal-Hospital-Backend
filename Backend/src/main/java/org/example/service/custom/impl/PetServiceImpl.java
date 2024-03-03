@@ -1,7 +1,6 @@
 package org.example.service.custom.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.dto.CustomerDto;
 import org.example.dto.PetDto;
 import org.example.entity.PetEntity;
 import org.example.repository.PetRepository;

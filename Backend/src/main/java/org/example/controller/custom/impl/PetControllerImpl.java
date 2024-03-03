@@ -47,8 +47,9 @@ public class PetControllerImpl implements PetController {
         return service.getNextId();
     }
 
+    @GetMapping("/pet/{petId}")
     @Override
-    public PetDto getById(Long id) {
-        return null;
+    public PetDto getById(@PathVariable Long petId) {
+        return service.getById(petId);
     }
 }

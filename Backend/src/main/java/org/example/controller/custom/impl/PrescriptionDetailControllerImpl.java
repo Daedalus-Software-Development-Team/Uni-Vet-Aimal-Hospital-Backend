@@ -4,7 +4,6 @@ import org.example.controller.custom.PrescriptionDetailController;
 import org.example.dto.PrescriptionDetailDto;
 import org.example.dto.Response;
 import org.example.entity.PrescriptionDetailEntity;
-import org.example.service.custom.PetService;
 import org.example.service.custom.PrescriptionDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

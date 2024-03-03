@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.example.dto.PrescriptionDetailDto;
+
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,4 +19,9 @@ public class PrescriptionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long prescriptionId;
+    Long customerId;
+    Long doctorId;
+    String description;
+    Double total;
+    List<PrescriptionDetailDto> prescriptionDetailList;
 }

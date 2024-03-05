@@ -13,7 +13,9 @@ public class PrescriptionDto {
     Long prescriptionId;
     Long customerId;
     Long doctorId;
+    Long petId;
     String description;
     Double total;
     List<PresDetailAndMedCombinedDto> prescriptionDetailArray;
+
 }

@@ -31,8 +31,8 @@ public class EmailDto {
     public boolean sendEmail() {
         System.out.println("Enter password");
         // Sender's email address and password
-        String senderEmail = "APP EMAIL ADDRESS HERE";
-        String senderPassword = "APP PASSWORD HERE";
+        String senderEmail = "prelanr@gmail.com";
+        String senderPassword = "";
 
 
         // Recipient's email address
@@ -88,7 +88,7 @@ public class EmailDto {
 
             if(this.fileName!=null){
                 MimeBodyPart messageBodyPart = new MimeBodyPart();
-                String filename = "C:\\Thiwanka\\Group Projects\\Dedalus\\Daedalous\\Uni-Vet-Aimal-Hospital-Backend\\Backend\\src\\main\\resources\\PdfFiles\\"+this.fileName;
+                String filename = "C:\\Thiwanka\\Group Projects\\Dedalus\\Daedalous\\Uni-Vet-Aimal-Hospital-Backend\\Backend\\src\\main\\resources\\reports\\PdfFiles\\"+this.fileName;
                 messageBodyPart.attachFile(filename);
                 multipart.addBodyPart(messageBodyPart);
             }

@@ -20,4 +20,6 @@ public class DoctorEntity {
     Double salary;
     String description;
     Double channelingFee;
+    String email;
+    String password;
 }

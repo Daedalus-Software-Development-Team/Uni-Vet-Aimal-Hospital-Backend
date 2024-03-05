@@ -12,4 +12,5 @@ public class DoctorDto {
     String name;
     Double salary;
     String description;
+    Double channelingFee;
 }

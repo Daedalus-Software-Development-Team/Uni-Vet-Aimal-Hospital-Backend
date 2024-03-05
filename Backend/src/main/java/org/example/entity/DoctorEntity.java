@@ -19,4 +19,5 @@ public class DoctorEntity {
     String name;
     Double salary;
     String description;
+    Double channelingFee;
 }

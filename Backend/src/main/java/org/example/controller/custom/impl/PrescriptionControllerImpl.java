@@ -1,6 +1,7 @@
 package org.example.controller.custom.impl;
 
 import org.example.controller.custom.PrescriptionController;
+import org.example.dto.PresDetailAndMedCombinedDto;
 import org.example.dto.PrescriptionDto;
 import org.example.dto.Response;
 import org.example.entity.PrescriptionEntity;
@@ -20,6 +21,7 @@ public class PrescriptionControllerImpl implements PrescriptionController {
     @PostMapping("/prescription")
     @Override
     public PrescriptionEntity saveOrUpdate(@RequestBody PrescriptionDto dto) {
+
         return service.save(dto);
     }
 

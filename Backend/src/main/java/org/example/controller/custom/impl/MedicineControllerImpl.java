@@ -22,13 +22,13 @@ public class MedicineControllerImpl implements MedicineController {
         return service.save(dto);
     }
 
-    @GetMapping("/customer")
+    @GetMapping("/medicine")
     @Override
     public List<MedicineDto> getAll() throws InterruptedException {
         return service.getAll();
     }
     @Override
-    @DeleteMapping("/customer/{customerId}")
+    @DeleteMapping("/medicine/{medicineId}")
     public Response delete(@PathVariable Long medicineId) {
         boolean isRemoved = service.delete(medicineId);
         if(isRemoved) {

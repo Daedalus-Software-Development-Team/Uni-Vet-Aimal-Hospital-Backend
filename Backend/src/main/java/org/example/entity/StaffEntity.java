@@ -11,9 +11,14 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-
 public class StaffEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long staffId;
+    String name;
+    Double salary;
+    String description;
+    String email;
+    String password;
+    String status;
 }

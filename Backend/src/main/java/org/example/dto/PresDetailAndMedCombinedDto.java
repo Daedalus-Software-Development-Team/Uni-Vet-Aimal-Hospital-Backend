@@ -7,15 +7,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class PrescriptionDetailDto {
+public class PresDetailAndMedCombinedDto {
     Long prescriptionDetailId;
-    Long prescriptionId;
-    Long medicineId;
     Boolean available;
     Boolean beforeMeal;
-    Double dailyQuantity;
-    Integer days;
+    String dailyQuantity;
+    String days;
     String dosage;
-
-
+    Long medicineId;
+    String medicineName;
+    String price;
 }

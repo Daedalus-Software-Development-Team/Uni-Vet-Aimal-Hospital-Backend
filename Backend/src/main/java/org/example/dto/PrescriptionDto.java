@@ -15,5 +15,5 @@ public class PrescriptionDto {
     Long doctorId;
     String description;
     Double total;
-    List<PrescriptionDetailDto> prescriptionDetailList;
+    List<PresDetailAndMedCombinedDto> prescriptionDetailArray;
 }

@@ -1,6 +1,9 @@
 package org.example.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,17 +14,10 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-public class PrescriptionDetailEntity {
+public class MedicineEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long prescriptionDetailId;
-    Long prescriptionId;
     Long medicineId;
-    Boolean available;
-    Boolean beforeMeal;
-    Double dailyQuantity;
-    Integer days;
-    Double price;
-    String dosage;
+    String medicineName;
+    double price;
 }
-

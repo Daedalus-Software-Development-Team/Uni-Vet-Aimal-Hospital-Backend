@@ -7,10 +7,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class DoctorDto {
-    Long doctorId;
-    String name;
-    Double salary;
-    String description;
-    Double channelingFee;
+public class MedicineDto {
+    Long medicineId;
+    String medicineName;
+    double price;
 }

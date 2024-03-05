@@ -20,7 +20,9 @@ public class PrescriptionDetailEntity {
     Long medicineId;
     Boolean available;
     Boolean beforeMeal;
-    Double quantity;
+    Double dailyQuantity;
     Integer days;
     Double price;
+    String dosage;
 }
+

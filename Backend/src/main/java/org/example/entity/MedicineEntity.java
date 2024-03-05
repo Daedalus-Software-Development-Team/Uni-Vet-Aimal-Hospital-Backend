@@ -19,5 +19,5 @@ public class MedicineEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long medicineId;
     String medicineName;
-    boolean price;
+    double price;
 }

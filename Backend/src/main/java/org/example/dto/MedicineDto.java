@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class MedicineDto {
     Long medicineId;
     String medicineName;
-    boolean price;
+    double price;
 }

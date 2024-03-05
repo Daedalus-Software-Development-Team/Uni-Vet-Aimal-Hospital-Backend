@@ -55,8 +55,8 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public Long getNextId() throws SQLException {
-        Iterable<StaffEntity> petList=repository.findAll();
-        Iterator<StaffEntity> iterator=petList.iterator();
+        Iterable<StaffEntity> staffList=repository.findAll();
+        Iterator<StaffEntity> iterator=staffList.iterator();
         Long lastId=null;
         while(iterator.hasNext()){
             StaffEntity entity=iterator.next();

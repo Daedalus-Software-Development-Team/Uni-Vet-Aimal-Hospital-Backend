@@ -1,7 +1,5 @@
 package org.example.service;
 
-import org.example.entity.CustomerEntity;
-
 import java.sql.SQLException;
 import java.util.List;
 

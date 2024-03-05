@@ -46,8 +46,9 @@ public class DoctorControllerImpl implements DoctorController {
         return service.getNextId();
     }
 
+    @GetMapping("/doctor/{doctorId}")
     @Override
-    public DoctorDto getById(Long id) {
-        return null;
+    public DoctorDto getById(@PathVariable Long doctorId) {
+        return service.getById(doctorId);
     }
 }

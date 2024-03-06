@@ -20,6 +20,7 @@ public class PrescriptionEntity {
     Long prescriptionId;
     Long customerId;
     Long doctorId;
+    Long petId;
     String description;
     Double total;
 //    List<PrescriptionDetailDto> prescriptionDetailList;

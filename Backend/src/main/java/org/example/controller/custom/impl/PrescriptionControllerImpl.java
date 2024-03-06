@@ -1,5 +1,6 @@
 package org.example.controller.custom.impl;
 
+import net.sf.jasperreports.engine.JRException;
 import org.example.controller.custom.PrescriptionController;
 import org.example.dto.PresDetailAndMedCombinedDto;
 import org.example.dto.PrescriptionDto;
@@ -9,6 +10,7 @@ import org.example.service.custom.PrescriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @RestController

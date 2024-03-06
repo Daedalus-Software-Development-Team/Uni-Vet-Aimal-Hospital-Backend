@@ -2,9 +2,7 @@ package org.example.service.custom.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.dto.PetDetailDto;
-import org.example.dto.PetDto;
 import org.example.entity.PetDetailEntity;
-import org.example.entity.PetEntity;
 import org.example.repository.PetDetailRepository;
 import org.example.service.custom.PetDetailService;
 import org.springframework.beans.factory.annotation.Autowired;

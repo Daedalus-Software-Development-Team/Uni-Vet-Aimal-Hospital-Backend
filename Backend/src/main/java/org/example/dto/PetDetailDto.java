@@ -9,4 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class PetDetailDto {
     Long petDetailId;
+    Long petId;
+    String vaccine;
+    String date;
 }

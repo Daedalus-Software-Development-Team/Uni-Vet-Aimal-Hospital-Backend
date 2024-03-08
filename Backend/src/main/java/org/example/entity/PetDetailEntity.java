@@ -11,9 +11,11 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-
 public class PetDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long petDetailId;
+    Long petId;
+    String vaccine;
+    String date;
 }

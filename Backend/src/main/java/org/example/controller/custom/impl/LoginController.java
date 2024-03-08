@@ -36,6 +36,6 @@ public class LoginController {
                 return staff;
             }
         }
-        return new Response(String.format("Invalid Username or Password"));
+        return new Response("Invalid Username or Password");
     }
 }

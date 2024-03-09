@@ -19,6 +19,7 @@ public class PetEntity {
     String petName;
     String type;
     String genre;
+    String gender;
     String birthday;
     Long customerId;
 }

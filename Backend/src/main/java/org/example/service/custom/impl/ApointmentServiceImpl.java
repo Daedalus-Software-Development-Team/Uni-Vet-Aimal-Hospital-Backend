@@ -1,8 +1,7 @@
 package org.example.service.custom.impl;
 
-import org.example.dto.ApointmentDto;
-import org.example.entity.ApointmentEntity;
-import org.example.entity.CustomerEntity;
+import org.example.dto.AppointmentDto;
+import org.example.entity.AppointmentEntity;
 import org.example.service.custom.ApointmentSevice;
 
 import java.sql.SQLException;
@@ -11,7 +10,7 @@ import java.util.List;
 public class ApointmentServiceImpl implements ApointmentSevice {
 
     @Override
-    public ApointmentEntity save(ApointmentDto dto) {
+    public AppointmentEntity save(AppointmentDto dto) {
         return null;
     }
 
@@ -21,7 +20,7 @@ public class ApointmentServiceImpl implements ApointmentSevice {
     }
 
     @Override
-    public List<ApointmentDto> getAll() {
+    public List<AppointmentDto> getAll() {
         return null;
     }
 
@@ -31,7 +30,7 @@ public class ApointmentServiceImpl implements ApointmentSevice {
     }
 
     @Override
-    public ApointmentDto getById(Long id) {
+    public AppointmentDto getById(Long id) {
         return null;
     }
 }

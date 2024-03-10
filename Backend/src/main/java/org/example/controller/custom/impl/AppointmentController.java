@@ -1,4 +1,4 @@
 package org.example.controller.custom.impl;
 
-public class ApointmentController {
+public class AppointmentController {
 }

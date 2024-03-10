@@ -22,5 +22,4 @@ public class AppointmentEntity {
     String date;
     String time;
     String comment;
-
 }

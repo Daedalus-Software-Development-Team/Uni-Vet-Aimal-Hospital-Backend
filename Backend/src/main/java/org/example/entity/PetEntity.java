@@ -11,7 +11,6 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-
 public class PetEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

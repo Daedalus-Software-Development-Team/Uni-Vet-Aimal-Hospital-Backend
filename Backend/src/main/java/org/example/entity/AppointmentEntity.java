@@ -11,10 +11,15 @@ import lombok.ToString;
 @Data
 @ToString
 @Entity
-
-public class ApointmentEntity {
+public class AppointmentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long apointmentId;
-
+    Long appointmentId;
+    String name;
+    String email;
+    String contactNumber;
+    String petCategory;
+    String date;
+    String time;
+    String comment;
 }

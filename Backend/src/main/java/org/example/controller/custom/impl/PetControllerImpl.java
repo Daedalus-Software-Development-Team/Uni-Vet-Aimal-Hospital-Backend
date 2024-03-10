@@ -22,6 +22,7 @@ public class PetControllerImpl implements PetController {
     public PetEntity saveOrUpdate(@RequestBody PetDto dto)  {
         return service.save(dto);
     }
+
     @GetMapping("/pet")
     @Override
     public List<PetDto> getAll() throws InterruptedException {

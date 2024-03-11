@@ -13,6 +13,7 @@ public class PetDto {
     String type;
     String genre;
     String gender;
-    String birthday;
+    String birthYear;
+    String weight;
     Long customerId;
 }

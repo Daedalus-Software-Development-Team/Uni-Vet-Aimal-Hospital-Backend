@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 public class PetDetailDto {
     Long petDetailId;
     Long petId;
-    String vaccine;
+    Long vaccineId;
     String date;
+    Boolean given;
+    String dosage;
 }

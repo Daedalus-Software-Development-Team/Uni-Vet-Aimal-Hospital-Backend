@@ -16,6 +16,8 @@ public class PetDetailEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long petDetailId;
     Long petId;
-    String vaccine;
+    Long vaccineId;
     String date;
+    Boolean given;
+    String dosage;
 }

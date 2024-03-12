@@ -16,4 +16,5 @@ public class CustomerDto {
     String email;
     String password;
     String position;
+
 }

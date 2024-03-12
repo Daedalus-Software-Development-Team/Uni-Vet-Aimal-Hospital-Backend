@@ -8,6 +8,7 @@ import org.example.service.custom.PetDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -52,5 +53,17 @@ public class PetDetailControllerImpl implements PetDetailController {
     @Override
     public PetDetailDto getById(@PathVariable Long petDetailId) {
         return service.getById(petDetailId);
+    }
+    @GetMapping("/petDetail/petId/{id}")
+    @Override
+    public List<PetDetailDto> getPetDetailByPetId(@PathVariable Long id) {
+        List<PetDetailDto> dtos=service.getAll();
+        List<PetDetailDto> list=new ArrayList<>();
+        for (PetDetailDto dto:dtos) {
+            if(dto.getPetId()==id){
+                list.add(dto);
+            }
+        }
+        return list;
     }
 }

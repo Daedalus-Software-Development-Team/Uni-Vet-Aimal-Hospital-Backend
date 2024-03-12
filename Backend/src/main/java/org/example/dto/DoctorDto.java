@@ -15,4 +15,5 @@ public class DoctorDto {
     Double channelingFee;
     String email;
     String password;
+    String position;
 }

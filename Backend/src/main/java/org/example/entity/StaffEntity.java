@@ -21,4 +21,5 @@ public class StaffEntity {
     String email;
     String password;
     String status;
+    String position;
 }

@@ -22,4 +22,5 @@ public class DoctorEntity {
     Double channelingFee;
     String email;
     String password;
+    String position;
 }

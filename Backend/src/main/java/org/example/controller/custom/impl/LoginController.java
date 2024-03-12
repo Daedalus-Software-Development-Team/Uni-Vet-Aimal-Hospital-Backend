@@ -1,9 +1,7 @@
 package org.example.controller.custom.impl;
 
-import org.example.dto.DoctorDto;
-import org.example.dto.LoginRequestDto;
-import org.example.dto.Response;
-import org.example.dto.StaffDto;
+import org.example.dto.*;
+import org.example.service.custom.CustomerService;
 import org.example.service.custom.DoctorService;
 import org.example.service.custom.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +19,20 @@ public class LoginController {
     @Autowired
     StaffService staffService;
 
+    @Autowired
+    CustomerService customerService;
+
     @PostMapping("/login")
     public Object confirmLogin(@RequestBody LoginRequestDto dto){
         List<DoctorDto> allDoctors = doctorService.getAll();
         List<StaffDto> allStaff = staffService.getAll();
+        List<CustomerDto> allCustomer = customerService.getAll();
 
+        for (CustomerDto customer:allCustomer) {
+            if (customer.getPassword() !=null && customer.getEmail() !=null  &&customer.getEmail().equalsIgnoreCase(dto.getEmail()) && customer.getPassword().equalsIgnoreCase(dto.getPassword())){
+                return customer;
+            }
+        }
         for (DoctorDto doctor:allDoctors) {
             if (doctor.getPassword() !=null && doctor.getEmail() !=null  && doctor.getEmail().equalsIgnoreCase(dto.getEmail()) && doctor.getPassword().equalsIgnoreCase(dto.getPassword())){
                 return doctor;

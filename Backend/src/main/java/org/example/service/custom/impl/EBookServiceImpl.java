@@ -33,6 +33,9 @@ public class EBookServiceImpl implements EbookService {
     @Autowired
     DoctorService doctorService;
 
+    @Autowired
+    VaccineService vaccineService;
+
     @Override
     public List<PrescriptionDto> getPrescriptionsById(Long petId) {
         List<PrescriptionDto> list=new ArrayList<>();
@@ -59,16 +62,16 @@ public class EBookServiceImpl implements EbookService {
 
     @Override
     public String printBook(Long petId) {
-        String[] inputFiles = {"C:\\Thiwanka\\Group Projects\\Dedalus\\Daedalous\\Uni-Vet-Aimal-Hospital-Backend\\Backend\\src\\main\\resources\\reports\\PdfFiles\\74report.pdf", "C:\\Thiwanka\\Group Projects\\Dedalus\\Daedalous\\Uni-Vet-Aimal-Hospital-Backend\\Backend\\src\\main\\resources\\reports\\PdfFiles\\75report.pdf", "C:\\Thiwanka\\Group Projects\\Dedalus\\Daedalous\\Uni-Vet-Aimal-Hospital-Backend\\Backend\\src\\main\\resources\\reports\\PdfFiles\\76report.pdf"};
         String outputFile = "src\\main\\resources\\reports\\PdfFiles\\output.pdf";
 
-//        mergePDFs(inputFiles, outputFile);
+
 
         System.out.println("PDF files merged successfully!");
         List<Long> prescriptionIds=new ArrayList<>();
 
         try {
             createFrontPage(petId);
+            generateVaccine(petId);
             List<PrescriptionDto> allPrescriptions=prescriptionService.getAll();
             for (PrescriptionDto dto:allPrescriptions) {
                 if(dto.getPetId().equals(petId)){
@@ -77,11 +80,26 @@ public class EBookServiceImpl implements EbookService {
                 }
             }
 
+
         } catch (JRException e) {
             throw new RuntimeException(e);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+        List<String> inputFiles=new ArrayList<>();
+        inputFiles.add("src\\main\\resources\\reports\\PdfFiles\\Cover-Front.pdf");
+        inputFiles.add("src\\main\\resources\\reports\\PdfFiles\\"+petId+"EbookVac.pdf");
+        inputFiles.add("src\\main\\resources\\reports\\PdfFiles\\"+petId+"frontPage.pdf");
+        for (Long id:prescriptionIds) {
+            String s="src\\main\\resources\\reports\\PdfFiles\\"+id+"Ebook.pdf";
+            inputFiles.add(s);
+        }
+        inputFiles.add("src\\main\\resources\\reports\\PdfFiles\\Cover-Back.pdf");
+        mergePDFs(inputFiles, outputFile);
+        PetDto pet=petService.getById(petId);
+        CustomerDto cust=customerService.getById(pet.getCustomerId());
+        EmailDto email=new EmailDto(cust.getEmail(),"Uni-Vet Pet Care E book","View your E book","output.pdf");
+        email.sendEmail();
         return "Successful ";
 
     }
@@ -189,7 +207,42 @@ public class EBookServiceImpl implements EbookService {
 
 
     }
-    private  void mergePDFs(String[] inputFiles, String outputFile) {
+
+    private void generateVaccine(Long petId) throws JRException, FileNotFoundException {
+        System.out.println("came");
+        List<PetDetailDto> petDetailDtos=petDetailService.getAll();
+        List <VaccineMappingDto> list =new ArrayList<>();
+        for (PetDetailDto dto:petDetailDtos) {
+            if(dto.getPetId().equals(petId)){
+                VaccineMappingDto mapObj= new VaccineMappingDto();
+                mapObj.setVaccineId(dto.getVaccineId());
+                mapObj.setDosage(dto.getDosage());
+                mapObj.setGiven(dto.getGiven()?"Given":"Not Given");
+                mapObj.setDate(dto.getDate());
+                mapObj.setName(vaccineService.getById(dto.getVaccineId()).getVaccineName());
+                list.add(mapObj);
+                System.out.println(mapObj);
+            }
+        }
+
+
+        JRBeanCollectionDataSource itemsJBean= new JRBeanCollectionDataSource(list);
+
+        String outputfile = "src/main/resources/reports/PdfFiles/"+petId+"EbookVac.pdf";
+        JasperDesign design= JRXmlLoader.load("src/main/resources/reports/VaccineReport.jrxml");
+        Map<String, Object> parameters = new HashMap<>();
+
+
+        parameters.put("VaccineDetailSet",itemsJBean);
+
+
+
+        JasperReport jasperReport= JasperCompileManager.compileReport(design);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
+        OutputStream outputStream=new FileOutputStream(new File(outputfile));
+        JasperExportManager.exportReportToPdfStream(jasperPrint, outputStream);
+    }
+    private  void mergePDFs(List<String> inputFiles, String outputFile) {
         PDFMergerUtility merger = new PDFMergerUtility();
 
         for (String inputFile : inputFiles) {
@@ -209,7 +262,7 @@ public class EBookServiceImpl implements EbookService {
         } catch (IOException e) {
             System.err.println("Error merging PDFs: " + e.getMessage());
         }
-        deleteFile("src\\main\\resources\\reports\\PdfFiles\\74report.pdf");
+
     }
     private void deleteFile(String filePath){
 

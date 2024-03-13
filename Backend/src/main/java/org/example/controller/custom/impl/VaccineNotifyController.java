@@ -57,7 +57,7 @@ public class VaccineNotifyController {
                 CustomerDto customer = customerService.getById(petDto.getCustomerId());
                 String email = customer.getEmail();
                 EmailDto e= new EmailDto(email,"Uni-Vet Vaccination Alert","Your pets vaccination is due tomorrow",null);
-
+                e.sendEmail();
             }
         }
     }

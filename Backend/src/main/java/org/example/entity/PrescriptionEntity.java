@@ -23,5 +23,6 @@ public class PrescriptionEntity {
     Long petId;
     String description;
     Double total;
+    String date;
 //    List<PrescriptionDetailDto> prescriptionDetailList;
 }

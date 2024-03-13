@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PetFrontPage" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="311ba242-73c6-49ac-b68c-0207f5cb6d4f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="petOwnerId" class="java.lang.String"/>
+	<parameter name="nic" class="java.lang.String"/>
+	<parameter name="petOwnerName" class="java.lang.String"/>
+	<parameter name="conatct" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="petId" class="java.lang.String"/>
+	<parameter name="petName" class="java.lang.String"/>
+	<parameter name="type" class="java.lang.String"/>
+	<parameter name="gender" class="java.lang.String"/>
+	<parameter name="genre" class="java.lang.String"/>
+	<parameter name="birthYear" class="java.lang.String"/>
+	<parameter name="weight" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="142" y="30" width="278" height="30" uuid="0ec9c44e-02f1-4233-ad43-3398206ada95"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNI-VET PET CARE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="63" y="0" width="269" height="30" uuid="9d27e31c-e70d-4b5f-853f-9666e7a6eb12"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="rtf">
+					<font size="19" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Customer Information]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="158" splitType="Stretch">
+			<staticText>
+				<reportElement x="43" y="95" width="140" height="30" uuid="87ca5a91-6800-479e-9d7a-467ca43b4516"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Contact         :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="127" width="140" height="30" uuid="8cc01825-1e26-4a6d-b66e-fda8f4049a84"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Email            :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="3" width="140" height="30" uuid="6bb75956-06db-4c18-a7fa-15a893b56233"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Pet-owner Id :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="43" y="64" width="140" height="30" uuid="6a7e0e54-9955-4423-b398-20115135b005"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Name            :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="33" width="140" height="30" uuid="2e8079d8-55b9-4419-8d7c-f670335389fe"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[NIC               :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="185" y="3" width="178" height="30" uuid="14caf5db-d4bb-46b1-baa7-1e108867bd98"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{petOwnerId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="33" width="178" height="30" uuid="80629c57-71c0-4540-a6db-e5a0bf422b84"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="97" width="178" height="30" uuid="177af68e-46a1-4ffc-a452-7dfae22f9a1d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{conatct}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="128" width="178" height="30" uuid="5cd2098f-b27a-4d55-bd99-f0d5d8888f36"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="65" width="178" height="30" uuid="86adddfe-4eee-4a52-99d3-89a6615ce14f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{petOwnerName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="250" splitType="Stretch">
+			<staticText>
+				<reportElement x="43" y="69" width="140" height="30" uuid="6a7f5386-6030-478a-81b8-65b61539286c"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Name            :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="37" width="140" height="30" uuid="8f1c6de5-097d-41c1-91c5-354e5b0fc53a"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Pet Id            :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="100" width="140" height="30" uuid="f782a261-a406-4dbb-99d7-7861b0f70f47"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Type             :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="130" width="140" height="30" uuid="c891d9df-2fa7-4264-9e0e-d947f0189dad"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Genre           :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="160" width="140" height="30" uuid="8dd53dc6-9f5d-4cba-970b-82703d26956e"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Gender         :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="45" y="190" width="140" height="30" uuid="9d8ca0e7-de7e-4f33-baa5-8478d9ff729f"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Birth Year     :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="220" width="140" height="30" uuid="86ea5f2d-4d27-4e89-8190-65206267477c"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Weight          :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="64" y="4" width="269" height="30" uuid="8f550df4-cf03-49e8-b31c-314a90550d7b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="rtf">
+					<font size="19" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Pet Information]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="183" y="37" width="178" height="30" uuid="cdb21052-0657-4c30-aa35-d3ba3ea444d6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{petId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="220" width="178" height="30" uuid="a7ae05f9-b8f6-4c3c-a33f-ed6c119c0298"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{weight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="69" width="178" height="30" uuid="39939c4b-cfa1-4860-83e4-f256b74fb5db"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{petName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="190" width="178" height="30" uuid="8b5d6309-0211-41f3-9317-72280b3af375"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{birthYear}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="160" width="178" height="30" uuid="3bbf295b-3de3-49b2-8697-56a0780c7066"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="100" width="178" height="30" uuid="46118dc3-1fff-43a3-bc70-657df70b8d60"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="131" width="178" height="30" uuid="87304b67-17ba-4946-877d-87764d9aef8d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{genre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="60" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -166,3 +166,5 @@ j
 :src/main/java/org/example/service/custom/EbookService.java,f\1\f1229ce6265339d7edc4c98ee0c3bdb132c62524
 s
 Csrc/main/java/org/example/service/custom/impl/EBookServiceImpl.java,4\e\4eba0017a05790f7a256fd78d896b1c63bc79a01
+k
+;src/main/java/org/example/repository/VaccineRepository.java,b\0\b06c4ec9161109306008bef0517b23bfdfcabcc0

@@ -3,6 +3,7 @@ package org.example.controller.custom.impl;
 import org.example.dto.PetDetailDto;
 import org.example.dto.PresDetailAndMedCombinedDto;
 import org.example.dto.PrescriptionDto;
+import org.example.dto.Response;
 import org.example.service.custom.EbookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -25,8 +26,8 @@ public class EBookControllerImpl {
         return ebookService.getPetDetailsByPetId(petId);
     }
     @GetMapping("/ebook/print/{petId}")
-    public String printBook(@PathVariable Long petId){
-        return ebookService.printBook(petId);
+    public Response printBook(@PathVariable Long petId){
+        return new Response(ebookService.printBook(petId));
     }
 
 }

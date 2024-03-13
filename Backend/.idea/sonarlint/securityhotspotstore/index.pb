@@ -158,3 +158,11 @@ Z
 Msrc/main/java/org/example/controller/custom/impl/PetDetailControllerImpl.java,c\5\c53c3884313057a02d3a938f9beb36ca034fc30d
 t
 Dsrc/main/java/org/example/controller/custom/PetDetailController.java,5\f\5fa4d824ab1d22e4d31614b8a2cffde1d79c85b2
+c
+3src/main/java/org/example/entity/VaccineEntity.java,0\6\060dc94da7749026dc6df47eaad582ef356b7d00
+y
+Isrc/main/java/org/example/controller/custom/impl/EBookControllerImpl.java,5\0\50c00d1a5e7341617701d4cfa063094a48a20b3a
+j
+:src/main/java/org/example/service/custom/EbookService.java,f\1\f1229ce6265339d7edc4c98ee0c3bdb132c62524
+s
+Csrc/main/java/org/example/service/custom/impl/EBookServiceImpl.java,4\e\4eba0017a05790f7a256fd78d896b1c63bc79a01

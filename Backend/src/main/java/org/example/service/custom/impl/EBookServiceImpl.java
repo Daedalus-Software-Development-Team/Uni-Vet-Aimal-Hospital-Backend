@@ -100,6 +100,14 @@ public class EBookServiceImpl implements EbookService {
         CustomerDto cust=customerService.getById(pet.getCustomerId());
         EmailDto email=new EmailDto(cust.getEmail(),"Uni-Vet Pet Care E book","View your E book","output.pdf");
         email.sendEmail();
+
+        deleteFile(petId+"EbookVac.pdf");
+        deleteFile(petId+"frontPage.pdf");
+        for (Long id:prescriptionIds) {
+
+            deleteFile(id+"Ebook.pdf");
+        }
+        deleteFile("output.pdf");
         return "Successful ";
 
     }
@@ -267,8 +275,9 @@ public class EBookServiceImpl implements EbookService {
     private void deleteFile(String filePath){
 
 
+        String path="src/main/resources/reports/PdfFiles/"+filePath;
         // Create a File object
-        File file = new File(filePath);
+        File file = new File(path);
 
         // Check if the file exists
         if (file.exists()) {

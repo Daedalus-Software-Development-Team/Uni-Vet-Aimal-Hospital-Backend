@@ -1,0 +1,19 @@
+package org.example.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class PetDto {
+    Long petId;
+    String petName;
+    String type;
+    String genre;
+    String gender;
+    String birthYear;
+    String weight;
+    Long customerId;
+}

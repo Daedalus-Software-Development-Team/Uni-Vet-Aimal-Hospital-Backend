@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url : jdbc:mysql://localhost:3306/UniVet?createDatabaseIfNotExist=true
+    password: Thiwanka2003
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update

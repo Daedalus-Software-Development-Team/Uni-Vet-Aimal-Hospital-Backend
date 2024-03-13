@@ -17,5 +17,6 @@ public class PrescriptionDto {
     String description;
     Double total;
     List<PresDetailAndMedCombinedDto> prescriptionDetailArray;
+    String date;
 
 }

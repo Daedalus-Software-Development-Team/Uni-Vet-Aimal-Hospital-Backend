@@ -11,4 +11,5 @@ public interface EbookService {
     public List<PrescriptionDto> getPrescriptionsById(Long petId);
 
     public List<PetDetailDto> getPetDetailsByPetId(Long petId);
+    public String printBook(@PathVariable Long petId);
 }

@@ -24,4 +24,9 @@ public class EBookControllerImpl {
     public List<PetDetailDto> getPetDetailsByPetId(@PathVariable Long petId){
         return ebookService.getPetDetailsByPetId(petId);
     }
+    @GetMapping("/ebook/print/{petId}")
+    public String printBook(@PathVariable Long petId){
+        return ebookService.printBook(petId);
+    }
+
 }

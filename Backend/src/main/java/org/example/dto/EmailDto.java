@@ -32,7 +32,7 @@ public class EmailDto {
         System.out.println("Enter password");
         // Sender's email address and password
         String senderEmail = "prelanr@gmail.com";
-        String senderPassword = "";
+        String senderPassword = "wykj srxw psvm zknf";
 
 
         // Recipient's email address
@@ -88,7 +88,7 @@ public class EmailDto {
 
             if(this.fileName!=null){
                 MimeBodyPart messageBodyPart = new MimeBodyPart();
-                String filename = "C:\\Thiwanka\\Group Projects\\Dedalus\\Daedalous\\Uni-Vet-Aimal-Hospital-Backend\\Backend\\src\\main\\resources\\reports\\PdfFiles\\"+this.fileName;
+                String filename = "src\\main\\resources\\reports\\PdfFiles\\"+this.fileName;
                 messageBodyPart.attachFile(filename);
                 multipart.addBodyPart(messageBodyPart);
             }
@@ -112,4 +112,5 @@ public class EmailDto {
         }
         return false;
     }
+
 }

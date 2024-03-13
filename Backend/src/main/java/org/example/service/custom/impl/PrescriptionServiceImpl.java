@@ -22,6 +22,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Service
@@ -63,6 +65,12 @@ public class PrescriptionServiceImpl implements PrescriptionService {
         prescriptionEntity.setTotal(dto.getTotal());
         prescriptionEntity.setDoctorId(dto.getDoctorId());
         prescriptionEntity.setPetId(dto.getPetId());
+
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = currentDate.format(formatter);
+
+        prescriptionEntity.setDate(formattedDate);
 
         PrescriptionEntity savedPrescriptionEntity =repository.save(prescriptionEntity);
         //        System.out.println(dto.getPrescriptionDetailArray());
@@ -152,6 +160,7 @@ public class PrescriptionServiceImpl implements PrescriptionService {
             dto.setCustomerId(entity.getCustomerId());
             dto.setDoctorId(entity.getDoctorId());
             dto.setPetId(entity.getPetId());
+            dto.setDate(entity.getDate());
             dto.setPrescriptionDetailArray(getDetailById(id));
         }
         return dto;

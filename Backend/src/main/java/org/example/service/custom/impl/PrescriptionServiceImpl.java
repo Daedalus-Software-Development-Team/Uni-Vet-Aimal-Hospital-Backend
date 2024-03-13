@@ -121,7 +121,7 @@ public class PrescriptionServiceImpl implements PrescriptionService {
         while(iterator.hasNext()){
             PrescriptionEntity entity=iterator.next();
 
-            PrescriptionDto dto=mapper.convertValue(entity,PrescriptionDto.class);
+            PrescriptionDto dto=getById(entity.getPrescriptionId());
             list.add(dto);
         }
         return list;
